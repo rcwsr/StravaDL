@@ -146,6 +146,24 @@ class StravaDownloader
         }
     }
 
+    public function getActivity($key, $id)
+    {
+        try{
+            $request = $this->client->get("activities/$id", null, array(
+                'query' => array(
+                    'access_token' => $key,
+                ),
+            ));
+            $response = $request->send();
+            //var_dump($response);
+
+            return $response->json();
+        }
+        catch(ClientErrorResponseException $e){
+            $this->exceptionThrower($e);
+        }
+    }
+
     public function exceptionThrower(\Exception $e)
     {
         $status_code = $e->getResponse()->getStatusCode();

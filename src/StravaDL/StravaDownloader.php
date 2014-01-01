@@ -174,7 +174,6 @@ class StravaDownloader
             throw new \Exception("Limit reached/Not authorised");
         }
         else{
-            echo $e;
             throw $e;
         }
     }

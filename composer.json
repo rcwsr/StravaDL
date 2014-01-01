@@ -2,6 +2,7 @@
     "name": "robcaw/stravadl",
     "type": "library",
     "require": {
+        "silex/silex": "~1.1",
         "guzzle/guzzle": "~3.7"
     },
     "autoload": {
